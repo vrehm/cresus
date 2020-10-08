@@ -1,0 +1,52 @@
+{
+    "kind": "collectionType",
+    "collectionName": "expenses",
+    "info": {
+        "name": "expense",
+        "description": ""
+    },
+    "options": {
+        "increments": true,
+        "timestamps": true,
+        "draftAndPublish": false
+    },
+    "attributes": {
+        "label": {
+            "type": "string",
+            "required": true
+        },
+        "month": {
+            "type": "string",
+            "required": true
+        },
+        "amount": {
+            "type": "decimal",
+            "required": true
+        },
+        "slug": {
+            "type": "uid"
+        },
+        "categories": {
+            "collection": "category",
+            "via": "expenses"
+        },
+        "dateOp": {
+            "type": "date",
+            "required": true
+        },
+        "dateVal": {
+            "type": "date",
+            "required": true
+        },
+        "isExceptional": {
+            "type": "boolean",
+            "default": false,
+            "required": true
+        },
+        "isRecurring": {
+            "type": "boolean",
+            "default": false,
+            "required": true
+        }
+    }
+}
