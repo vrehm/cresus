@@ -25,12 +25,12 @@ module.exports = {
         if (ctx.is('multipart')) {
             const { data, files } = parseMultipartData(ctx);
             data.owner = ctx.state.user.id;
-            entity = await strapi.services.article.create(data, { files });
+            entity = await strapi.services.expense.create(data, { files });
         } else {
             ctx.request.body.owner = ctx.state.user.id;
-            entity = await strapi.services.article.create(ctx.request.body);
+            entity = await strapi.services.expense.create(ctx.request.body);
         }
-        return sanitizeEntity(entity, { model: strapi.models.article });
+        return sanitizeEntity(entity, { model: strapi.models.expense });
     },
 
     /**
@@ -44,24 +44,24 @@ module.exports = {
 
         let entity;
 
-        const [article] = await strapi.services.article.find({
+        const [expense] = await strapi.services.expense.find({
             id: ctx.params.id,
             'owner.id': ctx.state.user.id,
         });
 
-        if (!article) {
+        if (!expense) {
             return ctx.unauthorized(`You can't update this entry`);
         }
 
         if (ctx.is('multipart')) {
             const { data, files } = parseMultipartData(ctx);
-            entity = await strapi.services.article.update({ id }, data, {
+            entity = await strapi.services.expense.update({ id }, data, {
                 files,
             });
         } else {
-            entity = await strapi.services.article.update({ id }, ctx.request.body);
+            entity = await strapi.services.expense.update({ id }, ctx.request.body);
         }
 
-        return sanitizeEntity(entity, { model: strapi.models.article });
+        return sanitizeEntity(entity, { model: strapi.models.expense });
     },
 };
