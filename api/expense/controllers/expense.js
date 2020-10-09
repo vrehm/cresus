@@ -71,6 +71,16 @@ module.exports = {
 
     async create(ctx) {
         let entity;
+        let { category } = ctx.request.body;
+        const [search] = await strapi.services.category.find({ name: category });
+
+        if (!search) {
+            category = await strapi.services.category.create({ name: category, owner: ctx.state.user.id });
+            ctx.request.body.category = category;
+        } else {
+            ctx.request.body.category = search;
+        }
+
         if (ctx.is('multipart')) {
             const { data, files } = parseMultipartData(ctx);
             data.owner = ctx.state.user.id;
@@ -79,6 +89,7 @@ module.exports = {
             ctx.request.body.owner = ctx.state.user.id;
             entity = await strapi.services.expense.create(ctx.request.body);
         }
+
         return sanitizeEntity(entity, { model: strapi.models.expense });
     },
 

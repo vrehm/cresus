@@ -1,4 +1,5 @@
-const slugify = require('slugify');
+// const slugify = require('slugify');
+const slugid = require('slugid');
 
 module.exports = {
     /**
@@ -6,14 +7,14 @@ module.exports = {
      */
     lifecycles: {
         async beforeCreate(data) {
-            if (data.name) {
-                data.slug = slugify(data.name, { lower: true });
-            }
+            // const string = data.name + '-' + data.owner + '-' + new Date().getTime();
+            const slug = slugid.nice();
+            data.slug = slug;
         },
         async beforeUpdate(params, data) {
-            if (data.name) {
-                data.slug = slugify(data.name, { lower: true });
-            }
+            // const string = data.name + '-' + data.owner + '-' + new Date().getTime();
+            const slug = slugid.nice();
+            data.slug = slug;
         },
     },
 };

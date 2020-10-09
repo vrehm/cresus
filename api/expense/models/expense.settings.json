@@ -23,13 +23,6 @@
       "type": "decimal",
       "required": true
     },
-    "slug": {
-      "type": "uid"
-    },
-    "categories": {
-      "collection": "category",
-      "via": "expenses"
-    },
     "dateOp": {
       "type": "date",
       "required": true
@@ -52,6 +45,13 @@
       "plugin": "users-permissions",
       "model": "user",
       "via": "expenses"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "category": {
+      "via": "expenses",
+      "model": "category"
     }
   }
 }

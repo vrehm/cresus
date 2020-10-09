@@ -57,6 +57,10 @@
     "expenses": {
       "via": "owner",
       "collection": "expense"
+    },
+    "categories": {
+      "via": "owner",
+      "collection": "category"
     }
   }
 }

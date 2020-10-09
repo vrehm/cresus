@@ -527,9 +527,6 @@
           "name": {
             "type": "string"
           },
-          "slug": {
-            "type": "uid"
-          },
           "expenses": {
             "type": "array",
             "items": {
@@ -556,15 +553,6 @@
                 "amount": {
                   "type": "number"
                 },
-                "slug": {
-                  "type": "uid"
-                },
-                "categories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
                 "dateOp": {
                   "type": "string"
                 },
@@ -580,6 +568,12 @@
                 "owner": {
                   "type": "string"
                 },
+                "slug": {
+                  "type": "uid"
+                },
+                "category": {
+                  "type": "string"
+                },
                 "created_by": {
                   "type": "string"
                 },
@@ -588,6 +582,63 @@
                 }
               }
             }
+          },
+          "owner": {
+            "required": [
+              "id",
+              "username",
+              "email"
+            ],
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "username": {
+                "type": "string"
+              },
+              "email": {
+                "type": "string"
+              },
+              "provider": {
+                "type": "string"
+              },
+              "password": {
+                "type": "string"
+              },
+              "resetPasswordToken": {
+                "type": "string"
+              },
+              "confirmed": {
+                "type": "boolean"
+              },
+              "blocked": {
+                "type": "boolean"
+              },
+              "role": {
+                "type": "string"
+              },
+              "expenses": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "categories": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "updated_by": {
+                "type": "string"
+              }
+            }
+          },
+          "slug": {
+            "type": "uid"
           }
         }
       },
@@ -596,14 +647,17 @@
           "name": {
             "type": "string"
           },
-          "slug": {
-            "type": "uid"
-          },
           "expenses": {
             "type": "array",
             "items": {
               "type": "string"
             }
+          },
+          "owner": {
+            "type": "string"
+          },
+          "slug": {
+            "type": "uid"
           },
           "created_by": {
             "type": "string"

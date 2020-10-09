@@ -1277,15 +1277,6 @@
                 "amount": {
                   "type": "number"
                 },
-                "slug": {
-                  "type": "uid"
-                },
-                "categories": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                },
                 "dateOp": {
                   "type": "string"
                 },
@@ -1300,6 +1291,46 @@
                 },
                 "owner": {
                   "type": "string"
+                },
+                "slug": {
+                  "type": "uid"
+                },
+                "category": {
+                  "type": "string"
+                },
+                "created_by": {
+                  "type": "string"
+                },
+                "updated_by": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "categories": {
+            "type": "array",
+            "items": {
+              "required": [
+                "id"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "expenses": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "owner": {
+                  "type": "string"
+                },
+                "slug": {
+                  "type": "uid"
                 },
                 "created_by": {
                   "type": "string"
@@ -1348,6 +1379,12 @@
             "type": "string"
           },
           "expenses": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "categories": {
             "type": "array",
             "items": {
               "type": "string"

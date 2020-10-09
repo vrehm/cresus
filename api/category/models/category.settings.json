@@ -2,24 +2,29 @@
   "kind": "collectionType",
   "collectionName": "categories",
   "info": {
-    "name": "category"
+    "name": "category",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "name": {
       "type": "string"
     },
-    "slug": {
-      "type": "uid",
-      "targetField": "name"
-    },
     "expenses": {
-      "via": "categories",
       "collection": "expense",
-      "dominant": true
+      "via": "category"
+    },
+    "owner": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "categories"
+    },
+    "slug": {
+      "type": "uid"
     }
   }
 }
