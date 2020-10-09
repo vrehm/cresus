@@ -55,12 +55,23 @@
       "configurable": false
     },
     "expenses": {
-      "via": "owner",
-      "collection": "expense"
+      "collection": "expense",
+      "via": "owner"
     },
     "categories": {
-      "via": "owner",
-      "collection": "category"
+      "collection": "category",
+      "via": "owner"
+    },
+    "avatar": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
     }
   }
 }

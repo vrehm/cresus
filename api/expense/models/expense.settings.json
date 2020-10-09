@@ -42,9 +42,9 @@
       "required": true
     },
     "owner": {
+      "via": "expenses",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "expenses"
+      "model": "user"
     },
     "slug": {
       "type": "uid"

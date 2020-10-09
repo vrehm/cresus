@@ -19,9 +19,9 @@
       "via": "category"
     },
     "owner": {
+      "via": "categories",
       "plugin": "users-permissions",
-      "model": "user",
-      "via": "categories"
+      "model": "user"
     },
     "slug": {
       "type": "uid"
