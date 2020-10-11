@@ -8482,6 +8482,14 @@ sliced@1.0.1:
   resolved "https://registry.yarnpkg.com/sliced/-/sliced-1.0.1.tgz#0b3a662b5d04c3177b1926bea82b03f837a2ef41"
   integrity sha1-CzpmK10Ewxd7GSa+qCsD+Dei70E=
 
+slugid@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/slugid/-/slugid-2.0.0.tgz#f08f651b677e666093e6617e10486aa2e73ed8a6"
+  integrity sha512-zTCivUfTk2GC6MU4Fjcz0iXwAjhe0NweMJqpfWcGrBbrm2dWtVAUupAonfsc7ysw4M0kZ934Nle5ljwM2dR+/g==
+  dependencies:
+    uuid "^3.2.1"
+    uuid-parse "^1.0.0"
+
 slugify@^1.4.5:
   version "1.4.5"
   resolved "https://registry.yarnpkg.com/slugify/-/slugify-1.4.5.tgz#a7517acf5f4c02a4df41e735354b660a4ed1efcf"
@@ -9115,6 +9123,11 @@ strapi-plugin-users-permissions@3.2.1:
     strapi-helper-plugin "3.2.1"
     strapi-utils "3.2.1"
     uuid "^3.1.0"
+
+strapi-provider-email-console@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/strapi-provider-email-console/-/strapi-provider-email-console-0.0.1.tgz#a55a1f15d2ad5b8c7ce25fc39bc957a50ff5e558"
+  integrity sha512-Q/Jjt/zvqflh04z1cN3SQjSYUSzJ2iVy5yvaO+nbCeeY2awXs7r9BGASfdUk6ork2NKsC3bN27hceyOwYJWzTA==
 
 strapi-provider-email-sendmail@3.2.1:
   version "3.2.1"
@@ -9862,6 +9875,11 @@ utils-merge@1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/utils-merge/-/utils-merge-1.0.1.tgz#9f95710f50a267947b2ccc124741c1028427e713"
   integrity sha1-n5VxD1CiZ5R7LMwSR0HBAoQn5xM=
+
+uuid-parse@^1.0.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/uuid-parse/-/uuid-parse-1.1.0.tgz#7061c5a1384ae0e1f943c538094597e1b5f3a65b"
+  integrity sha512-OdmXxA8rDsQ7YpNVbKSJkNzTw2I+S5WsbMDnCtIWSQaosNAcWtFuI/YK1TjzUI6nbkgiqEyh8gWngfcv8Asd9A==
 
 uuid@^3.1.0, uuid@^3.2.1, uuid@^3.3.2, uuid@^3.3.3, uuid@^3.4.0:
   version "3.4.0"
