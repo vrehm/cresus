@@ -541,10 +541,12 @@
             "type": "number"
           },
           "dateOp": {
-            "type": "string"
+            "type": "string",
+            "format": "date"
           },
           "dateVal": {
-            "type": "string"
+            "type": "string",
+            "format": "date"
           },
           "isExceptional": {
             "type": "boolean",
@@ -668,10 +670,12 @@
             "type": "number"
           },
           "dateOp": {
-            "type": "string"
+            "type": "string",
+            "format": "date"
           },
           "dateVal": {
-            "type": "string"
+            "type": "string",
+            "format": "date"
           },
           "isExceptional": {
             "type": "boolean",

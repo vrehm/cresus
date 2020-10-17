@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "10/17/2020 7:10:00 PM"
+    "x-generation-date": "10/17/2020 7:21:08 PM"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -3351,10 +3351,12 @@
             "type": "number"
           },
           "dateOp": {
-            "type": "string"
+            "type": "string",
+            "format": "date"
           },
           "dateVal": {
-            "type": "string"
+            "type": "string",
+            "format": "date"
           },
           "isExceptional": {
             "type": "boolean",
@@ -3478,10 +3480,12 @@
             "type": "number"
           },
           "dateOp": {
-            "type": "string"
+            "type": "string",
+            "format": "date"
           },
           "dateVal": {
-            "type": "string"
+            "type": "string",
+            "format": "date"
           },
           "isExceptional": {
             "type": "boolean",
@@ -3910,6 +3914,7 @@
           },
           "password": {
             "type": "string",
+            "format": "password",
             "minLength": 6
           },
           "resetPasswordToken": {
