@@ -21,7 +21,7 @@
         "strapi-admin": "3.2.1",
         "strapi-connector-bookshelf": "3.2.1",
         "strapi-helper-plugin": "^3.0.0-beta.20",
-        "strapi-plugin-content-manager": "3.2.1",
+        "strapi-plugin-content-manager": "3.2.4",
         "strapi-plugin-content-type-builder": "3.2.1",
         "strapi-plugin-documentation": "3.2.1",
         "strapi-plugin-email": "3.2.1",
