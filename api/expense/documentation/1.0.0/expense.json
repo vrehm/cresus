@@ -605,6 +605,9 @@
               "avatar": {
                 "type": "string"
               },
+              "confirmationToken": {
+                "type": "string"
+              },
               "created_by": {
                 "type": "string"
               },
