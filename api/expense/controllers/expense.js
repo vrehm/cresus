@@ -1,4 +1,4 @@
-const { parseMultipartData, sanitizeEntity } = require('strapi-utils');
+const { parseMultipartData, sanitizeEntity } = require("strapi-utils");
 
 module.exports = {
     /**
@@ -21,7 +21,9 @@ module.exports = {
             entities = await strapi.services.expense.find(ctx.query);
         }
 
-        return entities.map(entity => sanitizeEntity(entity, { model: strapi.models.expense }));
+        return entities.map((entity) =>
+            sanitizeEntity(entity, { model: strapi.models.expense })
+        );
     },
 
     /**
@@ -53,7 +55,7 @@ module.exports = {
 
         const expense = await strapi.services.expense.findOne({
             slug,
-            'owner.id': ctx.state.user.id,
+            "owner.id": ctx.state.user.id,
         });
 
         if (!expense) {
@@ -72,16 +74,22 @@ module.exports = {
     async create(ctx) {
         let entity;
         let { category } = ctx.request.body;
-        const [search] = await strapi.services.category.find({ name: category });
+        const [search] = await strapi.services.category.find({
+            name: category,
+            owner: ctx.state.user.id,
+        });
 
         if (!search) {
-            category = await strapi.services.category.create({ name: category, owner: ctx.state.user.id });
+            category = await strapi.services.category.create({
+                name: category,
+                owner: ctx.state.user.id,
+            });
             ctx.request.body.category = category;
         } else {
             ctx.request.body.category = search;
         }
 
-        if (ctx.is('multipart')) {
+        if (ctx.is("multipart")) {
             const { data, files } = parseMultipartData(ctx);
             data.owner = ctx.state.user.id;
             entity = await strapi.services.expense.create(data, { files });
@@ -106,14 +114,14 @@ module.exports = {
 
         const [expense] = await strapi.services.expense.find({
             id: ctx.params.id,
-            'owner.id': ctx.state.user.id,
+            "owner.id": ctx.state.user.id,
         });
 
         if (!expense) {
             return ctx.unauthorized(`You can't update this entry`);
         }
 
-        if (ctx.is('multipart')) {
+        if (ctx.is("multipart")) {
             const { data, files } = parseMultipartData(ctx);
             entity = await strapi.services.expense.update({ id }, data, {
                 files,
@@ -138,7 +146,7 @@ module.exports = {
 
         const [expense] = await strapi.services.expense.find({
             id: ctx.params.id,
-            'owner.id': ctx.state.user.id,
+            "owner.id": ctx.state.user.id,
         });
 
         if (!expense) {

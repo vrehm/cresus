@@ -1,5 +1,5 @@
 // const slugify = require('slugify');
-const slugid = require('slugid');
+const slugid = require("slugid");
 
 module.exports = {
     /**
@@ -8,13 +8,19 @@ module.exports = {
     lifecycles: {
         async beforeCreate(data) {
             // const string = data.dateOp.split('T')[0] + '-' + data.label + '-' + data.owner + '-' + new Date().getTime();
-            const { category, owner } = data
+            const { category, owner } = data;
 
-            if (typeof category == 'string') {
-                const [search] = await strapi.services.category.find({ name: category });
+            if (typeof category == "string") {
+                const [search] = await strapi.services.category.find({
+                    name: category,
+                    owner,
+                });
 
                 if (!search) {
-                    category = await strapi.services.category.create({ name: category, owner });
+                    category = await strapi.services.category.create({
+                        name: category,
+                        owner,
+                    });
                     data.category = category;
                 } else {
                     data.category = search;
