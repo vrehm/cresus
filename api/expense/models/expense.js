@@ -1,5 +1,6 @@
 // const slugify = require('slugify');
 const slugid = require("slugid");
+const index = "expenses";
 
 module.exports = {
     /**
@@ -34,6 +35,16 @@ module.exports = {
             // const string = data.dateOp.split('T')[0] + '-' + data.label + '-' + data.owner + '-' + new Date().getTime();
             const slug = slugid.nice();
             data.slug = slug;
+        },
+
+        async afterCreate(result, data) {
+            strapi.services.algolia.saveObject(result, index);
+        },
+        async afterUpdate(result, params, data) {
+            strapi.services.algolia.saveObject(result, index);
+        },
+        async afterDelete(result, params) {
+            strapi.services.algolia.deleteObject(result.id, index);
         },
     },
 };
