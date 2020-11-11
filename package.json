@@ -29,7 +29,7 @@
         "strapi-plugin-upload": "^3.2.5",
         "strapi-plugin-users-permissions": "^3.2.5",
         "strapi-provider-email-console": "^0.0.1",
-        "strapi-provider-email-sendmail": "^3.2.5",
+        "strapi-provider-email-sendmail": "^3.3.2",
         "strapi-utils": "^3.2.5"
     },
     "author": {
