@@ -18,7 +18,7 @@
         "slugid": "^2.0.0",
         "slugify": "^1.4.6",
         "strapi": "^3.2.5",
-        "strapi-admin": "^3.2.5",
+        "strapi-admin": "^3.3.2",
         "strapi-connector-bookshelf": "^3.2.5",
         "strapi-helper-plugin": "^3.2.5",
         "strapi-hook-algolia": "^3.2.4",
